@@ -1,0 +1,21 @@
+{
+  "name": "pokewiki-api",
+  "version": "1.0.0",
+  "description": "Apollo server wrapper for Pokeapi",
+  "main": "index.js",
+  "author": "Flrn Prz",
+  "license": "MIT",
+  "scripts": {
+    "build": "",
+    "dev": "yarn run esm src/server.js",
+    "serve": ""
+  },
+  "dependencies": {
+    "apollo-datasource-rest": "^0.6.4",
+    "apollo-server": "^2.9.3",
+    "graphql": "^14.5.6"
+  },
+  "devDependencies": {
+    "esm": "^3.2.25"
+  }
+}
