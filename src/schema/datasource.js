@@ -12,11 +12,6 @@ export class PokeWikiApi extends RESTDataSource {
 
   async getObjectByTypeAndId(type, id) {
     const result = await this.get(`${type}/${id}/`);
-    return result;
-  }
-
-  async getStatByID(id) {
-    const result = await this.get(`stat/${id}`);
     console.log(result);
     return result;
   }

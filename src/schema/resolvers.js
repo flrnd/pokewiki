@@ -7,6 +7,6 @@ export const resolvers = {
     ability: (root, { id }, { dataSources }) =>
       dataSources.PokeWikiApi.getObjectByTypeAndId('ability', id),
     stat: (root, { id }, { dataSources }) =>
-      dataSources.PokeWikiApi.getStatById(id),
+      dataSources.PokeWikiApi.getObjectByTypeAndId('stat', id),
   },
 };
