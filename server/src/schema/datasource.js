@@ -21,10 +21,22 @@ export class PokeWikiApi extends RESTDataSource {
       name: pokemon.name,
       height: pokemon.height,
       weight: pokemon.weight,
-      stats: pokemon.stats,
+      stats: this.getAllStats(pokemon.stats),
       abilities: pokemon.abilities,
       baseExperience: pokemon.base_experience,
       moves: pokemon.moves,
+    };
+  }
+
+  getAllStats(stats) {
+    return stats.map(stat => this.statReducer(stat));
+  }
+
+  statReducer(stat) {
+    return {
+      name: stat.stat.name,
+      baseStat: stat.base_stat,
+      effort: stat.effort,
     };
   }
 }

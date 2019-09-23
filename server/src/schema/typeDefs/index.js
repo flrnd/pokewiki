@@ -20,9 +20,9 @@ export const typeDefs = gql`
     name: String!
     height: Int!
     weight: Int!
-    stats: [Stats!]!
+    stats: [Stats]!
     abilities: [Abilities!]!
-    base_experience: Int
+    baseExperience: Int
     moves: [Moves!]!
   }
 
@@ -39,7 +39,7 @@ export const typeDefs = gql`
   type Abilities {
     id: ID!
     ability: Ability!
-    is_hidden: Boolean
+    isHidden: Boolean
     slot: Int!
   }
   type Ability {
@@ -50,9 +50,10 @@ export const typeDefs = gql`
 
   type Stats {
     id: ID!
-    base_stat: Int!
-    effort: Int!
-    stat: Stat!
+    name: String
+    baseStat: Int
+    effort: Int
+    stat: Stat
   }
 
   type Stat {
