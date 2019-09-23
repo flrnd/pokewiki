@@ -12,7 +12,19 @@ export class PokeWikiApi extends RESTDataSource {
 
   async getObjectByTypeAndId(type, id) {
     const result = await this.get(`${type}/${id}/`);
-    console.log(result);
-    return result;
+    return this.pokemonReducer(result);
+  }
+
+  pokemonReducer(pokemon) {
+    return {
+      id: pokemon.id,
+      name: pokemon.name,
+      height: pokemon.height,
+      weight: pokemon.weight,
+      stats: pokemon.stats,
+      abilities: pokemon.abilities,
+      baseExperience: pokemon.base_experience,
+      moves: pokemon.moves,
+    };
   }
 }
