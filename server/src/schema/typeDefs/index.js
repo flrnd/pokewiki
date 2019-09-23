@@ -64,8 +64,10 @@ export const typeDefs = gql`
   type Query {
     allPokemon: Pokemons
     pokemon(id: ID!): Pokemon
-    ability(id: ID!): Abilities
-    move(id: ID!): Moves
-    stat(id: ID!): Stats
+
+    # Not sure if I'm going to need these:
+    # ability(id: ID!): Abilities
+    # move(id: ID!): Moves
+    # stat(id: ID!): Stats
   }
 `;
