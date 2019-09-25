@@ -1,7 +1,12 @@
 export const resolvers = {
   Query: {
-    pokemon: (root, { id }, { dataSources }) =>
-      dataSources.PokeWikiApi.getObjectByTypeAndId('pokemon', id),
+    pokemon: async (root, { id }, { dataSources }) => {
+      const result = await dataSources.PokeWikiApi.getObjectByTypeAndId(
+        'pokemon',
+        id,
+      );
+      return dataSources.PokeWikiApi.pokemonReducer(result);
+    },
     allPokemon: (root, args, { dataSources }) =>
       dataSources.PokeWikiApi.getAllPokemons(),
 

@@ -1,7 +1,7 @@
 import { ApolloServer } from 'apollo-server';
-import { PokeWikiApi } from './schema/datasource';
-import { typeDefs } from './schema/typeDefs';
-import { resolvers } from './schema/resolvers';
+import { PokeWikiApi } from './datasource';
+import { typeDefs } from './schema';
+import { resolvers } from './resolvers';
 
 const server = new ApolloServer({
   typeDefs,

@@ -10,6 +10,7 @@ export const typeDefs = gql`
   }
 
   type Result {
+    id: ID!
     name: String!
     url: String!
   }

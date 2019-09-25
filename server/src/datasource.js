@@ -10,12 +10,23 @@ export class PokeWikiApi extends RESTDataSource {
     return this.get('pokemon');
   }
 
+  async getObjectByTypeAndId(type, id) {
+    return await this.get(`${type}/${id}/`);
+  }
+
+  async getPokemonByURL(url) {
+    const result = await this.get(url);
+    return this.pokemonReducer(result);
+  }
+
   async getSpecies(id) {
+    const language = 'en';
     const species = await this.get(`pokemon-species/${id}`);
-    const description = getByLanguage('en', species.flavor_text_entries)
+    const description = getByLanguage(language, species.flavor_text_entries)
       .pop()
       .flavor_text.replace(/\n|\f/g, ' ');
-    const genera = getByLanguage('en', species.genera).pop().genus;
+    const genera = getByLanguage(language, species.genera).pop().genus;
+
     return {
       name: species.name,
       color: species.color.name,
@@ -27,11 +38,6 @@ export class PokeWikiApi extends RESTDataSource {
       habitat: species.habitat.name,
       hatchCounter: species.hatch_counter,
     };
-  }
-
-  async getObjectByTypeAndId(type, id) {
-    const result = await this.get(`${type}/${id}/`);
-    return this.pokemonReducer(result);
   }
 
   pokemonReducer(pokemon) {
