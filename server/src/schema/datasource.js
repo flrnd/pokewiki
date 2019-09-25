@@ -10,6 +10,25 @@ export class PokeWikiApi extends RESTDataSource {
     return this.get('pokemon');
   }
 
+  async getSpecies(id) {
+    const species = await this.get(`pokemon-species/${id}`);
+    const description = getByLanguage('en', species.flavor_text_entries)
+      .pop()
+      .flavor_text.replace(/\n|\f/g, ' ');
+    const genera = getByLanguage('en', species.genera).pop().genus;
+    return {
+      name: species.name,
+      color: species.color.name,
+      description,
+      genera,
+      baseHappiness: species.base_happiness,
+      captureRate: species.capture_rate,
+      growthRate: species.growth_rate.name,
+      habitat: species.habitat.name,
+      hatchCounter: species.hatch_counter,
+    };
+  }
+
   async getObjectByTypeAndId(type, id) {
     const result = await this.get(`${type}/${id}/`);
     return this.pokemonReducer(result);
@@ -22,7 +41,7 @@ export class PokeWikiApi extends RESTDataSource {
       pokemonTypes: this.getAllTypes(pokemon.types),
       height: pokemon.height,
       weight: pokemon.weight,
-      description: 'some description',
+      species: this.getSpecies(pokemon.id),
       abilities: this.getAllAbilities(pokemon.abilities),
       stats: this.getAllStats(pokemon.stats),
       moves: this.getAllMoves(pokemon.moves),
@@ -78,3 +97,6 @@ export class PokeWikiApi extends RESTDataSource {
     };
   }
 }
+
+const getByLanguage = (lang, list) =>
+  list.filter(l => l.language.name === lang);

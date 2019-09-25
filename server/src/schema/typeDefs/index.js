@@ -21,10 +21,22 @@ export const typeDefs = gql`
     pokemonTypes: [PokemonType]
     height: Int!
     weight: Int!
-    description: String!
+    species: Species
     abilities: [Ability]!
     stats: [Stat]!
     moves: [Move]!
+  }
+
+  type Species {
+    name: String
+    color: String
+    description: String
+    baseHappiness: Int
+    captureRate: Int
+    genera: String
+    growthRate: String
+    habitat: String
+    hatchCounter: Int
   }
 
   type PokemonType {
@@ -57,7 +69,6 @@ export const typeDefs = gql`
   type Query {
     allPokemon: Pokemons
     pokemon(id: ID!): Pokemon
-
     # Not sure if I'm going to need these:
     # ability(id: ID!): Abilities
     # move(id: ID!): Moves
