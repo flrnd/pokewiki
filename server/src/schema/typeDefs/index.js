@@ -6,7 +6,7 @@ export const typeDefs = gql`
     count: Int!
     next: String
     previous: String
-    results: [Result!]!
+    results: [Result]!
   }
 
   type Result {
@@ -18,47 +18,40 @@ export const typeDefs = gql`
   type Pokemon {
     id: ID!
     name: String!
+    pokemonTypes: [PokemonType]
     height: Int!
     weight: Int!
-    stats: [Stats]!
-    abilities: [Abilities!]!
-    baseExperience: Int
-    moves: [Moves!]!
+    description: String!
+    abilities: [Ability]!
+    stats: [Stat]!
+    moves: [Move]!
   }
 
-  type Moves {
-    id: ID!
-    move: Move!
+  type PokemonType {
+    slot: Int
+    name: String
   }
 
   type Move {
     id: ID!
     name: String!
+    levelLearnedAt: Int!
+    moveLearnMethod: String!
+    versionGroup: String!
   }
 
-  type Abilities {
-    id: ID!
-    ability: Ability!
-    isHidden: Boolean
-    slot: Int!
-  }
   type Ability {
     id: ID!
     name: String!
-    url: String!
-  }
-
-  type Stats {
-    id: ID!
-    name: String
-    baseStat: Int
-    effort: Int
-    stat: Stat
+    isHidden: Boolean!
+    slot: Int
   }
 
   type Stat {
     id: ID!
-    name: String!
+    name: String
+    baseStat: Int
+    effort: Int
   }
   # QUERY
   type Query {

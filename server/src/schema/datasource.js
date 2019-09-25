@@ -19,12 +19,50 @@ export class PokeWikiApi extends RESTDataSource {
     return {
       id: pokemon.id,
       name: pokemon.name,
+      pokemonTypes: this.getAllTypes(pokemon.types),
       height: pokemon.height,
       weight: pokemon.weight,
+      description: 'some description',
+      abilities: this.getAllAbilities(pokemon.abilities),
       stats: this.getAllStats(pokemon.stats),
-      abilities: pokemon.abilities,
-      baseExperience: pokemon.base_experience,
-      moves: pokemon.moves,
+      moves: this.getAllMoves(pokemon.moves),
+    };
+  }
+
+  getAllMoves(moves) {
+    return moves.map(move => this.moveReducer(move));
+  }
+
+  moveReducer(move) {
+    const lastVersionGroup = move.version_group_details.pop();
+    return {
+      name: move.move.name,
+      levelLearnedAt: lastVersionGroup.level_learned_at,
+      moveLearnMethod: lastVersionGroup.move_learn_method.name,
+      versionGroup: lastVersionGroup.version_group.name,
+    };
+  }
+
+  getAllTypes(pokemonTypes) {
+    return pokemonTypes.map(pokemonType => this.typeReducer(pokemonType));
+  }
+
+  typeReducer(pokemonType) {
+    return {
+      slot: pokemonType.slot,
+      name: pokemonType.type.name,
+    };
+  }
+
+  getAllAbilities(abilities) {
+    return abilities.map(ability => this.abilityReducer(ability));
+  }
+
+  abilityReducer(ability) {
+    return {
+      name: ability.ability.name,
+      slot: ability.slot,
+      isHidden: ability.is_hidden,
     };
   }
 
