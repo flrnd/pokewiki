@@ -1,4 +1,3 @@
-import fetch from 'node-fetch';
 import { RESTDataSource } from 'apollo-datasource-rest';
 
 export class PokeWikiApi extends RESTDataSource {
