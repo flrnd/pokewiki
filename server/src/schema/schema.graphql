@@ -1,63 +1,134 @@
+"""
+PageInfo object for pagination
+"""
+type PageInfo {
+  "Has next page bool"
+  hasNextPage: Boolean!
+  "Has previous page bool"
+  hasPreviousPage: Boolean!
+  "has start cursor"
+  startCursor: String
+  "has end cursor"
+  endCursor: String
+}
+
+"""
+Pokemon list
+"""
 type Pokemons {
+  """
+  Pokemon list
+  """
   list: [Pokemon]!
 }
 
+"""
+Pokemon
+"""
 type Pokemon {
+  "ID"
   id: ID!
+  "Pokemon name"
   name: String!
+  "Pokemon type"
   pokemonTypes: [PokemonType]!
+  "Height"
   height: Int!
+  "Weight"
   weight: Int!
+  "pokemon species"
   species: Species
+  "Abilities array"
   abilities: [Ability]!
+  "Stats array"
   stats: [Stat]!
+  "Moves array"
   moves: [Move]!
 }
 
+"""
+Species
+"""
 type Species {
+  "Species name"
   name: String!
+  "Color"
   color: String!
+  "Short description"
   description: String!
+  "Base happiness stat"
   baseHappiness: Int!
+  "Capture Rate number"
   captureRate: Int!
+  "Pokemon genera"
   genera: String!
+  "Growth rate ratio"
   growthRate: String!
+  "Species habitat"
   habitat: String!
+  "Hatch counter"
   hatchCounter: Int!
 }
 
+"""
+Pokemon Type
+"""
 type PokemonType {
+  "Pokemon type slot"
   slot: Int!
+  "Type name"
   name: String!
 }
 
+"""
+Pokemon move
+"""
 type Move {
+  "ID"
   id: ID!
+  "Move name"
   name: String!
+  "Level learned at number"
   levelLearnedAt: Int!
+  "Learned method"
   moveLearnMethod: String!
+  "Which version"
   versionGroup: String!
 }
 
+"""
+Ability
+"""
 type Ability {
+  "ID"
   id: ID!
+  "Ability name"
   name: String!
+  "Is hidden?"
   isHidden: Boolean!
+  "Ability slot"
   slot: Int!
 }
 
+"""
+Stat
+"""
 type Stat {
+  "ID"
   id: ID!
+  "Stat name"
   name: String!
+  "Base stat number"
   baseStat: Int!
+  "Stat effort"
   effort: Int!
 }
-# QUERY
+"""
+Queries
+"""
 type Query {
+  "Get pokemons in a list"
   allPokemon(pageSize: Int!): Pokemons!
+  "Get a single pokemon"
   pokemon(id: ID!): Pokemon!
-  # Not sure if I'm going to need these:
-  # ability(id: ID!): Abilities
-  # move(id: ID!): Moves
-  # stat(id: ID!): Stats
 }
