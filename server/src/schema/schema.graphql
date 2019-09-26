@@ -54,7 +54,7 @@ type Stat {
 }
 # QUERY
 type Query {
-  allPokemon(pageSize: Int): Pokemons
+  allPokemon(pageSize: Int!): Pokemons!
   pokemon(id: ID!): Pokemon!
   # Not sure if I'm going to need these:
   # ability(id: ID!): Abilities

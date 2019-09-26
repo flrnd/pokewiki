@@ -7,7 +7,7 @@ export const resolvers = {
       );
       return dataSources.PokeWikiApi.pokemonReducer(result);
     },
-    allPokemon: async (_, { pageSize = 5 }, { dataSources }) =>
+    allPokemon: async (_, { pageSize }, { dataSources }) =>
       await dataSources.PokeWikiApi.getAllPokemons(pageSize),
 
     /* Not sure if I'm going to need these, check schema
