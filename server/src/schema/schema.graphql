@@ -16,9 +16,7 @@ type PageInfo {
 Pokemon list
 """
 type Pokemons {
-  """
-  Pokemon list
-  """
+  "Pokemon list"
   list: [Pokemon]!
 }
 
