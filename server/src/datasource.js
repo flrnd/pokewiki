@@ -11,15 +11,38 @@ export class PokeWikiApi extends RESTDataSource {
     const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
     const pageList = [];
     const list = [];
+
     response.results.filter(res => pageList.push(res.url));
+
     for (const [_, url] of pageList.entries()) {
       await list.push(this.getPokemonByURL(url));
     }
+
+    const pageInfo = this.pageInfoReducer(response);
     return {
+      pageInfo,
       list,
     };
   }
 
+  pageInfoReducer(response) {
+    const pageInfo = {
+      hasNextPage: false,
+      hasPreviousPage: false,
+      startCursor: '',
+      endCursor: '',
+    };
+
+    response.next
+      ? ((pageInfo.hasNextPage = true), (pageInfo.endCursor = response.next))
+      : pageInfo;
+    response.previous
+      ? ((pageInfo.hasPreviousPage = true),
+        (pageInfo.startCursor = response.previous))
+      : pageInfo;
+
+    return pageInfo;
+  }
   async getObjectByTypeAndId(type, id) {
     return await this.get(`${type}/${id}/`);
   }
