@@ -1,3 +1,4 @@
+import fetch from 'node-fetch';
 import { RESTDataSource } from 'apollo-datasource-rest';
 
 export class PokeWikiApi extends RESTDataSource {
@@ -6,8 +7,15 @@ export class PokeWikiApi extends RESTDataSource {
     this.baseURL = 'https://pokeapi.co/api/v2/';
   }
 
-  async getAllPokemons() {
-    return this.get('pokemon');
+  async getAllPokemons(pageSize) {
+    const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
+    const results = response.results;
+    const list = [];
+    results.filter(res => list.push(res.url));
+    const pokemonList = [];
+    for (const [index, url] of list.entries()) {
+      return await this.getPokemonByURL(url);
+    }
   }
 
   async getObjectByTypeAndId(type, id) {
