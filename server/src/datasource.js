@@ -9,8 +9,7 @@ export class PokeWikiApi extends RESTDataSource {
 
   async getAllPokemons(pageSize) {
     const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
-    const pageList = [];
-    const list = [];
+    const [pageList, list] = [];
     response.results.filter(res => pageList.push(res.url));
     for (const [_, url] of pageList.entries()) {
       await list.push(this.getPokemonByURL(url));
