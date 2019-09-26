@@ -17,7 +17,7 @@ Pokemon list
 """
 type Pokemons {
   "Page and cursors"
-  pageInfo: PageInfo
+  pageInfo: PageInfo!
   "Pokemon list"
   list: [Pokemon]!
 }
