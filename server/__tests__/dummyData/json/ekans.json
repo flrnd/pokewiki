@@ -1,0 +1,566 @@
+{
+  "id": "23",
+  "name": "ekans",
+  "pokemonTypes": [
+    {
+      "slot": 1,
+      "name": "poison"
+    }
+  ],
+  "height": 20,
+  "weight": 69,
+  "species": {
+    "name": "ekans",
+    "color": "purple",
+    "description": "Moves silently and stealthily. Eats the eggs of birds, such as PIDGEY and SPEAROW, whole.",
+    "baseHappiness": 70,
+    "captureRate": 255,
+    "genera": "Snake Pokémon",
+    "growthRate": "medium",
+    "habitat": "grassland",
+    "hatchCounter": 20
+  },
+  "stats": [
+    {
+      "name": "speed",
+      "baseStat": 55,
+      "effort": 0
+    },
+    {
+      "name": "special-defense",
+      "baseStat": 54,
+      "effort": 0
+    },
+    {
+      "name": "special-attack",
+      "baseStat": 40,
+      "effort": 0
+    },
+    {
+      "name": "defense",
+      "baseStat": 44,
+      "effort": 0
+    },
+    {
+      "name": "attack",
+      "baseStat": 60,
+      "effort": 1
+    },
+    {
+      "name": "hp",
+      "baseStat": 35,
+      "effort": 0
+    }
+  ],
+  "abilities": [
+    {
+      "slot": 3,
+      "isHidden": true,
+      "name": "unnerve"
+    },
+    {
+      "slot": 2,
+      "isHidden": false,
+      "name": "shed-skin"
+    },
+    {
+      "slot": 1,
+      "isHidden": false,
+      "name": "intimidate"
+    }
+  ],
+  "moves": [
+    {
+      "name": "bind",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "black-2-white-2"
+    },
+    {
+      "name": "slam",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "headbutt",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "body-slam",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "wrap",
+      "levelLearnedAt": 1,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "take-down",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "double-edge",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "poison-sting",
+      "levelLearnedAt": 10,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "leer",
+      "levelLearnedAt": 1,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "bite",
+      "levelLearnedAt": 17,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "disable",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "acid",
+      "levelLearnedAt": 38,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "strength",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "mega-drain",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "earthquake",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "fissure",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "dig",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "toxic",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rage",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "mimic",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "screech",
+      "levelLearnedAt": 31,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "double-team",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "haze",
+      "levelLearnedAt": 36,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "bide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "skull-bash",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "glare",
+      "levelLearnedAt": 24,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rest",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rock-slide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "substitute",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "thief",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "snore",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "curse",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "spite",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "protect",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "scary-face",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "sludge-bomb",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "giga-drain",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "endure",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "swagger",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "attract",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "sleep-talk",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "return",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "frustration",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "pursuit",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "iron-tail",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "hidden-power",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "rain-dance",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "sunny-day",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "crunch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "crystal"
+    },
+    {
+      "name": "beat-up",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "stockpile",
+      "levelLearnedAt": 25,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "spit-up",
+      "levelLearnedAt": 25,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "swallow",
+      "levelLearnedAt": 25,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "torment",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "facade",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "snatch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "secret-power",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "poison-fang",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "rock-tomb",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "poison-tail",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "natural-gift",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "payback",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "gastro-acid",
+      "levelLearnedAt": 33,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "sucker-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "poison-jab",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "dark-pulse",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "aqua-tail",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "seed-bomb",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "switcheroo",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "egg",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "mud-bomb",
+      "levelLearnedAt": 28,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "gunk-shot",
+      "levelLearnedAt": 41,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "captivate",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "venoshock",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "sludge-wave",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "coil",
+      "levelLearnedAt": 44,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "acid-spray",
+      "levelLearnedAt": 28,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "round",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "bulldoze",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "belch",
+      "levelLearnedAt": 38,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "x-y"
+    },
+    {
+      "name": "confide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "x-y"
+    },
+    {
+      "name": "infestation",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "x-y"
+    },
+    {
+      "name": "brutal-swing",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "sun-moon"
+    }
+  ]
+}

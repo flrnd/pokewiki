@@ -1,0 +1,573 @@
+{
+  "id": "5",
+  "name": "charmeleon",
+  "pokemonTypes": [
+    {
+      "slot": 1,
+      "name": "fire"
+    }
+  ],
+  "height": 11,
+  "weight": 190,
+  "species": {
+    "name": "charmeleon",
+    "color": "red",
+    "description": "When it swings its burning tail, it elevates the temperature to unbearably high levels.",
+    "baseHappiness": 70,
+    "captureRate": 45,
+    "genera": "Flame Pokémon",
+    "growthRate": "medium-slow",
+    "habitat": "mountain",
+    "hatchCounter": 20
+  },
+  "stats": [
+    {
+      "name": "speed",
+      "baseStat": 80,
+      "effort": 1
+    },
+    {
+      "name": "special-defense",
+      "baseStat": 65,
+      "effort": 0
+    },
+    {
+      "name": "special-attack",
+      "baseStat": 80,
+      "effort": 1
+    },
+    {
+      "name": "defense",
+      "baseStat": 58,
+      "effort": 0
+    },
+    {
+      "name": "attack",
+      "baseStat": 64,
+      "effort": 0
+    },
+    {
+      "name": "hp",
+      "baseStat": 58,
+      "effort": 0
+    }
+  ],
+  "abilities": [
+    {
+      "slot": 3,
+      "isHidden": true,
+      "name": "solar-power"
+    },
+    {
+      "slot": 1,
+      "isHidden": false,
+      "name": "blaze"
+    }
+  ],
+  "moves": [
+    {
+      "name": "mega-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "fire-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "thunder-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "scratch",
+      "levelLearnedAt": 1,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "swords-dance",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "cut",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "mega-kick",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "headbutt",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "heartgold-soulsilver"
+    },
+    {
+      "name": "body-slam",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "take-down",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "double-edge",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "leer",
+      "levelLearnedAt": 15,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "growl",
+      "levelLearnedAt": 1,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "ember",
+      "levelLearnedAt": 1,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "flamethrower",
+      "levelLearnedAt": 42,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "submission",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "counter",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "seismic-toss",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "strength",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "dragon-rage",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "fire-spin",
+      "levelLearnedAt": 56,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "dig",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "toxic",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rage",
+      "levelLearnedAt": 24,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "mimic",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "double-team",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "smokescreen",
+      "levelLearnedAt": 13,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "defense-curl",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "reflect",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "bide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "fire-blast",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "swift",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "skull-bash",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rest",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "rock-slide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "emerald"
+    },
+    {
+      "name": "slash",
+      "levelLearnedAt": 33,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "substitute",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "red-blue"
+    },
+    {
+      "name": "snore",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "curse",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "protect",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "scary-face",
+      "levelLearnedAt": 27,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "mud-slap",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "outrage",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "black-2-white-2"
+    },
+    {
+      "name": "endure",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "swagger",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "fury-cutter",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "attract",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "sleep-talk",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "return",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "frustration",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "dynamic-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "dragon-breath",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "gold-silver"
+    },
+    {
+      "name": "iron-tail",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "metal-claw",
+      "levelLearnedAt": 13,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "firered-leafgreen"
+    },
+    {
+      "name": "hidden-power",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "sunny-day",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "rock-smash",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "heat-wave",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "will-o-wisp",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "facade",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "focus-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "brick-break",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "secret-power",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "overheat",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "rock-tomb",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "aerial-ace",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "dragon-claw",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "natural-gift",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "fling",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "dragon-pulse",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "omega-ruby-alpha-sapphire"
+    },
+    {
+      "name": "shadow-claw",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "fire-fang",
+      "levelLearnedAt": 28,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "captivate",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "platinum"
+    },
+    {
+      "name": "hone-claws",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "flame-burst",
+      "levelLearnedAt": 32,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "flame-charge",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "round",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "echoed-voice",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "incinerate",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "inferno",
+      "levelLearnedAt": 54,
+      "moveLearnMethod": "level-up",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "fire-pledge",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "tutor",
+      "versionGroup": "black-white"
+    },
+    {
+      "name": "work-up",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "sun-moon"
+    },
+    {
+      "name": "confide",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "x-y"
+    },
+    {
+      "name": "power-up-punch",
+      "levelLearnedAt": 0,
+      "moveLearnMethod": "machine",
+      "versionGroup": "x-y"
+    }
+  ]
+}
