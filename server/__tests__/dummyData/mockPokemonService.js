@@ -4,8 +4,9 @@
 
 import { bulbasaur, charmeleon, ekans } from './mocks';
 
-pokemons = [bulbasaur, charmeleon, ekans];
-pokemon = bulbasaur;
+const pokemons = [bulbasaur, charmeleon, ekans];
 
-export const allPokemons = () => pokemons;
-export const getPokemon = () => pokemon;
+const allPokemons = () => pokemons;
+const pokemon = () => pokemons[0];
+
+export { allPokemons, pokemon };

@@ -1,8 +1,8 @@
 import { makeExecutableSchema } from 'graphql-tools';
 import { graphql } from 'graphql';
 import resolvers from '../src/resolvers';
-import mockPokemonService from './mocks/mockPokemonService';
-import pokemon from './mocks/';
+import { pokemon, allPokemons } from './dummyData/mockPokemonService';
+import { bulbasaur } from './dummyData/mocks';
 
 const PokemonTestCase = {
   id: 'Pokemon test case',
