@@ -1,6 +1,9 @@
+// ***********************
 // Dummy data for mocking.
-// Because the pokemon response is quite big, there are
-// a few json examples directly from the API.
+// ***********************
+// Because the pokemon response is quite big,
+// there are 3 json files in the mock directory to
+// emulate data from the API.
 
 import { bulbasaur, charmeleon, ekans } from './mocks';
 

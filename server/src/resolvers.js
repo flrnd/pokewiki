@@ -1,14 +1,14 @@
 export const resolvers = {
   Query: {
     pokemon: async (_, { id }, { dataSources }) => {
-      const result = await dataSources.PokeWikiApi.getObjectByTypeAndId(
+      const result = await dataSources.PokemonsAPI.getObjectByTypeAndId(
         'pokemon',
         id,
       );
-      return dataSources.PokeWikiApi.pokemonReducer(result);
+      return dataSources.PokemonsAPI.pokemonReducer(result);
     },
     allPokemon: async (_, { pageSize }, { dataSources }) =>
-      await dataSources.PokeWikiApi.getAllPokemons(pageSize),
+      await dataSources.PokemonsAPI.getAllPokemons(pageSize),
 
     /* Not sure if I'm going to need these, check schema
       ability: (root, { id }, { dataSources }) =>

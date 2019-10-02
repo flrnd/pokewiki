@@ -1,11 +1,11 @@
 import { ApolloServer } from 'apollo-server';
-import { PokeWikiApi } from './src/datasource';
+import { PokemonsAPI } from './src/datasource';
 import schema from './src/schema';
 
 const server = new ApolloServer({
   schema,
   dataSources: () => ({
-    PokeWikiApi: new PokeWikiApi(),
+    PokemonsAPI: new PokemonsAPI(),
   }),
 });
 

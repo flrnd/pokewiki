@@ -1,6 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 
-export class PokeWikiApi extends RESTDataSource {
+export class PokemonsAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = 'https://pokeapi.co/api/v2/';
