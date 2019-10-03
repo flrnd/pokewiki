@@ -51,24 +51,23 @@ export class PokemonsAPI extends RESTDataSource {
     return this.pokemonReducer(result);
   }
 
-  async getSpecies(id) {
+  async getSpecies(result) {
     const language = 'en';
-    const species = await this.get(`pokemon-species/${id}`);
-    const description = getByLanguage(language, species.flavor_text_entries)
+    const description = getByLanguage(language, result.flavor_text_entries)
       .pop()
       .flavor_text.replace(/\n|\f/g, ' ');
-    const genera = getByLanguage(language, species.genera).pop().genus;
+    const genera = getByLanguage(language, result.genera).pop().genus;
 
     return {
-      name: species.name,
-      color: species.color.name,
+      name: result.name,
+      color: result.color.name,
       description,
       genera,
-      baseHappiness: species.base_happiness,
-      captureRate: species.capture_rate,
-      growthRate: species.growth_rate.name,
-      habitat: species.habitat.name,
-      hatchCounter: species.hatch_counter,
+      baseHappiness: result.base_happiness,
+      captureRate: result.capture_rate,
+      growthRate: result.growth_rate.name,
+      habitat: result.habitat.name,
+      hatchCounter: result.hatch_counter,
     };
   }
 
@@ -79,7 +78,7 @@ export class PokemonsAPI extends RESTDataSource {
       pokemonTypes: this.getAllTypes(pokemon.types),
       height: pokemon.height,
       weight: pokemon.weight,
-      species: this.getSpecies(pokemon.id),
+      species: pokemon.species,
       abilities: this.getAllAbilities(pokemon.abilities),
       stats: this.getAllStats(pokemon.stats),
       moves: this.getAllMoves(pokemon.moves),

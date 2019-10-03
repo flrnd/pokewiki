@@ -131,4 +131,6 @@ type Query {
   allPokemon(pageSize: Int!): Pokemons!
   "Get a single pokemon"
   pokemon(id: ID!): Pokemon!
+  "Get Species"
+  species(id: ID!): Species!
 }

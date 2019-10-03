@@ -5,16 +5,19 @@ export const resolvers = {
         'pokemon',
         id,
       );
-      return dataSources.PokemonsAPI.pokemonReducer(result);
+      //return dataSources.PokemonsAPI.pokemonReducer(result);
+      console.log(result);
+      return result;
     },
     allPokemon: async (_, { pageSize }, { dataSources }) =>
       await dataSources.PokemonsAPI.getAllPokemons(pageSize),
 
-    /* Not sure if I'm going to need these, check schema
-      ability: (root, { id }, { dataSources }) =>
-      dataSources.PokeWikiApi.getObjectByTypeAndId('ability', id),
-      stat: (root, { id }, { dataSources }) =>
-      dataSources.PokeWikiApi.getObjectByTypeAndId('stat', id),
-      */
+    species: async (_, { id }, { dataSources }) => {
+      const result = await dataSources.PokemonsAPI.getObjectByTypeAndId(
+        'pokemon-species',
+        id,
+      );
+      return dataSources.PokemonsAPI.getSpecies(result);
+    },
   },
 };
