@@ -5,9 +5,7 @@ export const resolvers = {
         'pokemon',
         id,
       );
-      const b = dataSources.PokemonsAPI.getPokemon(result);
-      console.log(JSON.stringify(b));
-      return b;
+      dataSources.PokemonsAPI.getPokemon(result);
     },
     allPokemon: (parent, { pageSize }, { dataSources }) =>
       dataSources.PokemonsAPI.getAllPokemons(pageSize),
