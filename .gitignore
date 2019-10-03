@@ -14,7 +14,7 @@ pids
 # build/ dist/
 build/
 dist/
-
+coverage/
 # Dependency directories
 node_modules/
 
