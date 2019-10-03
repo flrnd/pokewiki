@@ -10,7 +10,6 @@ export class PokemonsAPI extends RESTDataSource {
     const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
     const pageList = [];
     const list = [];
-
     response.results.filter(res => pageList.push(res.url));
 
     for (const [_, url] of pageList.entries()) {

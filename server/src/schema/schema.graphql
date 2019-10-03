@@ -37,7 +37,7 @@ type Pokemon {
   "Weight"
   weight: Int!
   "pokemon species"
-  species: Species
+  species: Species!
   "Abilities array"
   abilities: [Ability]!
   "Stats array"
