@@ -48,7 +48,12 @@ export class PokemonsAPI extends RESTDataSource {
 
   async getPokemonByURL(url) {
     const result = await this.get(url);
-    return this.pokemonReducer(result);
+    return this.getPokemon(result);
+  }
+
+  async getSpeciesByURL(url) {
+    const result = await this.get(url);
+    return this.getSpecies(result);
   }
 
   async getSpecies(result) {
@@ -71,7 +76,7 @@ export class PokemonsAPI extends RESTDataSource {
     };
   }
 
-  pokemonReducer(pokemon) {
+  getPokemon(pokemon) {
     return {
       id: pokemon.id,
       name: pokemon.name,

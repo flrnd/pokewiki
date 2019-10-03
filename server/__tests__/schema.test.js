@@ -17,14 +17,15 @@ describe('Schema', () => {
 });
 
 describe('PokemonAPI', () => {
-  it('Pokemon.Reducer(result) should be ', () => {
+  it('fetches bulbasaur', () => {
     const myDataSource = new PokemonsAPI();
     const spy = jest
       .spyOn(myDataSource, 'get')
       .mockImplementation((type, id) => rawApiCall);
 
-    expect(
-      myDataSource.pokemonReducer(myDataSource.get('pokemon', 1)),
-    ).resolves.toBe(bulbasaur);
+    const result = myDataSource.get('pokemon', '1');
+    const pokemonResult = myDataSource.getPokemon(result);
+    expect(pokemonResult).toEqual(bulbasaur);
   });
 });
+

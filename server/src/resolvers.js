@@ -1,23 +1,28 @@
 export const resolvers = {
   Query: {
-    pokemon: async (_, { id }, { dataSources }) => {
+    pokemon: async (parent, { id }, { dataSources }) => {
       const result = await dataSources.PokemonsAPI.getObjectByTypeAndId(
         'pokemon',
         id,
       );
-      //return dataSources.PokemonsAPI.pokemonReducer(result);
-      console.log(result);
-      return result;
+      const b = dataSources.PokemonsAPI.getPokemon(result);
+      console.log(JSON.stringify(b));
+      return b;
     },
-    allPokemon: async (_, { pageSize }, { dataSources }) =>
-      await dataSources.PokemonsAPI.getAllPokemons(pageSize),
+    allPokemon: (parent, { pageSize }, { dataSources }) =>
+      dataSources.PokemonsAPI.getAllPokemons(pageSize),
 
-    species: async (_, { id }, { dataSources }) => {
+    species: async (parent, { id }, { dataSources }) => {
       const result = await dataSources.PokemonsAPI.getObjectByTypeAndId(
         'pokemon-species',
         id,
       );
       return dataSources.PokemonsAPI.getSpecies(result);
+    },
+  },
+  Pokemon: {
+    species(parent, _, { dataSources }) {
+      return dataSources.PokemonsAPI.getSpeciesByURL(parent.species.url);
     },
   },
 };
