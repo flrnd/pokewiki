@@ -4,16 +4,6 @@ import { PokemonsAPI } from '../src/datasource';
 import { bulbasaur } from './dummyData/mocks';
 import * as rawApiCall from './dummyData/mocks/1.json';
 
-describe('Schema', () => {
-  test('has valid type definitions', async () => {
-    expect(async () => {
-      const MockServer = mockServer(typeDefs);
-
-      await MockServer.query(`{ __schema { types { name } } }`);
-    }).not.toThrow();
-  });
-});
-
 describe('PokemonAPI', () => {
   const myDataSource = new PokemonsAPI();
   let result = '';
@@ -29,8 +19,8 @@ describe('PokemonAPI', () => {
     expect(myDataSource.get).toHaveBeenCalledTimes(1);
   });
 
-  it('fetches bulbasaur', () => {
+  it('fetches a pokemon', () => {
     const pokemonResult = myDataSource.getPokemon(result);
-    expect(pokemonResult).toEqual(bulbasaur);
+    expect(pokemonResult).toMatchObject(bulbasaur);
   });
 });
