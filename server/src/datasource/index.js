@@ -94,7 +94,8 @@ export class PokemonsAPI extends RESTDataSource {
   }
 
   moveReducer(move) {
-    const lastVersionGroup = move.version_group_details.pop();
+    const size = checkArraySize(move.version_group_details.length - 1);
+    const lastVersionGroup = move.version_group_details[size];
     return {
       name: move.move.name,
       levelLearnedAt: lastVersionGroup.level_learned_at,
@@ -138,6 +139,8 @@ export class PokemonsAPI extends RESTDataSource {
     };
   }
 }
+
+const checkArraySize = num => (num >= 0 ? num : 0);
 
 const getByLanguage = (lang, list) =>
   list.filter(l => l.language.name === lang);

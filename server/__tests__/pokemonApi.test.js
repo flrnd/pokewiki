@@ -6,10 +6,9 @@ const myDataSource = new PokemonsAPI();
 const spy = jest
   .spyOn(myDataSource, 'get')
   .mockImplementation(param => rawApiCall);
+const result = myDataSource.get('pokemon', '1');
 
 describe('API result', () => {
-  const result = myDataSource.get('pokemon');
-
   describe('abilities', () => {
     it('has property: abilities', () => {
       expect(result).toHaveProperty('abilities');
@@ -38,7 +37,6 @@ describe('PokemonAPI', () => {
   });
 
   test('getPokemon returns a pokemon from a result', () => {
-    const result = myDataSource.get('pokemon', '1');
     const moves = myDataSource.getAllMoves(result.moves);
     expect(result.moves[0].version_group_details[0]).toHaveProperty(
       'level_learned_at',
@@ -46,20 +44,17 @@ describe('PokemonAPI', () => {
   });
 
   test('getAllTypes returns a pokemon-types array from a result', () => {
-    const result = myDataSource.get('pokemon', '1');
     expect(myDataSource.getAllTypes(result.types)).toMatchObject(
       bulbasaur.pokemonTypes,
     );
   });
 
   test('getAllMoves returns a pokemon-moves array from a result', () => {
-    const result = myDataSource.get('pokemon', '1');
     const moves = myDataSource.getAllMoves(result.moves);
     expect(moves).toMatchObject(bulbasaur.moves);
   });
 
   test('getAllStats returns a pokemon-stats array from a result', () => {
-    const result = myDataSource.get('pokemon', '1');
     expect(myDataSource.getAllStats(result.stats)).toMatchObject(
       bulbasaur.stats,
     );
