@@ -37,6 +37,14 @@ describe('PokemonAPI', () => {
     ).resolves.toMatchObject(rawApiCall);
   });
 
+  test('getPokemon returns a pokemon from a result', () => {
+    const result = myDataSource.get('pokemon', '1');
+    const moves = myDataSource.getAllMoves(result.moves);
+    expect(result.moves[0].version_group_details[0]).toHaveProperty(
+      'level_learned_at',
+    );
+  });
+
   test('getAllTypes returns a pokemon-types array from a result', () => {
     const result = myDataSource.get('pokemon', '1');
     expect(myDataSource.getAllTypes(result.types)).toMatchObject(
@@ -54,14 +62,6 @@ describe('PokemonAPI', () => {
     const result = myDataSource.get('pokemon', '1');
     expect(myDataSource.getAllStats(result.stats)).toMatchObject(
       bulbasaur.stats,
-    );
-  });
-
-  test('getPokemon returns a pokemon from a result', () => {
-    const result = myDataSource.get('pokemon', '1');
-    const moves = myDataSource.getAllMoves(result.moves);
-    expect(result.moves[0].version_group_details[0]).toHaveProperty(
-      'level_learned_at',
     );
   });
 
