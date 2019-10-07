@@ -1,4 +1,5 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
+import * as reducer from './reducers';
 
 export class PokemonsAPI extends RESTDataSource {
   constructor() {
@@ -16,31 +17,13 @@ export class PokemonsAPI extends RESTDataSource {
       await list.push(this.getPokemonByURL(url));
     }
 
-    const pageInfo = this.pageInfoReducer(response);
+    const pageInfo = reducer.pageInfo(response);
     return {
       pageInfo,
       list,
     };
   }
 
-  pageInfoReducer(response) {
-    const pageInfo = {
-      hasNextPage: false,
-      hasPreviousPage: false,
-      startCursor: '',
-      endCursor: '',
-    };
-
-    response.next
-      ? ((pageInfo.hasNextPage = true), (pageInfo.endCursor = response.next))
-      : pageInfo;
-    response.previous
-      ? ((pageInfo.hasPreviousPage = true),
-        (pageInfo.startCursor = response.previous))
-      : pageInfo;
-
-    return pageInfo;
-  }
   async getObjectByTypeAndId(type, id) {
     return await this.get(`${type}/${id}/`);
   }
@@ -55,12 +38,19 @@ export class PokemonsAPI extends RESTDataSource {
     return this.getSpecies(result);
   }
 
+  // refactor this code
   async getSpecies(result) {
     const language = 'en';
-    const description = getByLanguage(language, result.flavor_text_entries)
-      .pop()
-      .flavor_text.replace(/\n|\f/g, ' ');
-    const genera = getByLanguage(language, result.genera).pop().genus;
+    const descriptionList = this.getByLanguage(
+      language,
+      result.flavor_text_entries,
+    );
+    const description = descriptionList[
+      descriptionList.length - 1
+    ].flavor_text.replace(/\n|\f/g, ' ');
+
+    const generaList = this.getByLanguage(language, result.genera);
+    const genera = generaList[generaList.length - 1].genus;
 
     return {
       name: result.name,
@@ -73,6 +63,10 @@ export class PokemonsAPI extends RESTDataSource {
       habitat: result.habitat.name,
       hatchCounter: result.hatch_counter,
     };
+  }
+
+  getByLanguage(lang, list) {
+    return list.filter(l => l.language.name === lang);
   }
 
   getPokemon(pokemon) {
@@ -90,57 +84,18 @@ export class PokemonsAPI extends RESTDataSource {
   }
 
   getAllMoves(moves) {
-    return moves.map(move => this.moveReducer(move));
-  }
-
-  moveReducer(move) {
-    const size = checkArraySize(move.version_group_details.length - 1);
-    const lastVersionGroup = move.version_group_details[size];
-    return {
-      name: move.move.name,
-      levelLearnedAt: lastVersionGroup.level_learned_at,
-      moveLearnMethod: lastVersionGroup.move_learn_method.name,
-      versionGroup: lastVersionGroup.version_group.name,
-    };
+    return moves.map(move => reducer.move(move));
   }
 
   getAllTypes(pokemonTypes) {
-    return pokemonTypes.map(pokemonType => this.typeReducer(pokemonType));
-  }
-
-  typeReducer(pokemonType) {
-    return {
-      slot: pokemonType.slot,
-      name: pokemonType.type.name,
-    };
+    return pokemonTypes.map(pokemonType => reducer.pType(pokemonType));
   }
 
   getAllAbilities(abilities) {
-    return abilities.map(ability => this.abilityReducer(ability));
-  }
-
-  abilityReducer(ability) {
-    return {
-      name: ability.ability.name,
-      slot: ability.slot,
-      isHidden: ability.is_hidden,
-    };
+    return abilities.map(ability => reducer.ability(ability));
   }
 
   getAllStats(stats) {
-    return stats.map(stat => this.statReducer(stat));
-  }
-
-  statReducer(stat) {
-    return {
-      name: stat.stat.name,
-      baseStat: stat.base_stat,
-      effort: stat.effort,
-    };
+    return stats.map(stat => reducer.stat(stat));
   }
 }
-
-const checkArraySize = num => (num >= 0 ? num : 0);
-
-const getByLanguage = (lang, list) =>
-  list.filter(l => l.language.name === lang);

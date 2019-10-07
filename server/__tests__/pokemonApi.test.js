@@ -1,29 +1,12 @@
 import { PokemonsAPI } from '../src/datasource';
 import { bulbasaur } from './dummyData/mocks';
-import * as rawApiCall from './dummyData/mocks/1.json';
+import * as apiCall from './dummyData/mocks/1.json';
 
 const myDataSource = new PokemonsAPI();
 const spy = jest
   .spyOn(myDataSource, 'get')
-  .mockImplementation(param => rawApiCall);
+  .mockImplementation(param => apiCall);
 const result = myDataSource.get('pokemon', '1');
-
-describe('API result', () => {
-  describe('abilities', () => {
-    it('has property: abilities', () => {
-      expect(result).toHaveProperty('abilities');
-    });
-    it('abilities[0] has propertesy: ability, is_hidden, slot', () => {
-      expect(result.abilities[0]).toHaveProperty('ability');
-      expect(result.abilities[0]).toHaveProperty('is_hidden');
-      expect(result.abilities[0]).toHaveProperty('slot');
-    });
-    it('ability has properties: name, url', () => {
-      expect(result.abilities[0].ability).toHaveProperty('name');
-      expect(result.abilities[0].ability).toHaveProperty('url');
-    });
-  });
-});
 
 describe('PokemonAPI', () => {
   it('calls get()', () => {
@@ -33,7 +16,7 @@ describe('PokemonAPI', () => {
   test('getObjectByTypeAndId returns  an api request', async () => {
     await expect(
       myDataSource.getObjectByTypeAndId('pokemon', '1'),
-    ).resolves.toMatchObject(rawApiCall);
+    ).resolves.toMatchObject(apiCall);
   });
 
   test('getPokemon returns a pokemon from a result', () => {
@@ -59,11 +42,14 @@ describe('PokemonAPI', () => {
       bulbasaur.stats,
     );
   });
-
-  //test('getPokemonByURL returns a pokemon', async () => {
-  //  const result = myDataSource.get('pokemon', '1');
-  // await expect(
-  //   myDataSource.getPokemonByURL('mocked/url'),
-  //  ).resolves.toMatchObject(bulbasaur);
-  //});
+  test('getAllAbilities returns a pokemon-abilities array from a result', () => {
+    expect(myDataSource.getAllAbilities(result.abilities)).toMatchObject(
+      bulbasaur.abilities,
+    );
+  });
+  test('getPokemonByURL returns a pokemon', async () => {
+    await expect(
+      myDataSource.getPokemonByURL('mocked/url'),
+    ).resolves.toMatchObject(bulbasaur);
+  });
 });
