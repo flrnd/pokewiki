@@ -53,17 +53,7 @@ export class PokemonsAPI extends RESTDataSource {
     const generaList = this.getByLanguage(language, result.genera);
     const genera = generaList[generaList.length - 1].genus;
 
-    return {
-      name: result.name,
-      color: result.color.name,
-      description,
-      genera,
-      baseHappiness: result.base_happiness,
-      captureRate: result.capture_rate,
-      growthRate: result.growth_rate.name,
-      habitat: result.habitat.name,
-      hatchCounter: result.hatch_counter,
-    };
+    return reducer.species(result, description, genera);
   }
 
   getByLanguage(lang, list) {

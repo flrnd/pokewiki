@@ -52,3 +52,17 @@ export const pageInfo = response => {
 
   return pageInfo;
 };
+
+export const species = (result, description, genera) => {
+  return {
+    name: result.name,
+    color: result.color.name,
+    description,
+    genera,
+    baseHappiness: result.base_happiness,
+    captureRate: result.capture_rate,
+    growthRate: result.growth_rate.name,
+    habitat: result.habitat.name,
+    hatchCounter: result.hatch_counter,
+  };
+};
