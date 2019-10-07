@@ -1,6 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import * as reducer from './reducers';
-import { getDescription, getByLanguage, filterByURL } from './util';
+import { getDescription, getByLanguage } from './util';
 
 export class PokemonsAPI extends RESTDataSource {
   constructor() {
