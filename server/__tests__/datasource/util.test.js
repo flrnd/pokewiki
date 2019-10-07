@@ -8,7 +8,7 @@ import * as speciesApiCall from '../dummyData/mocks/species_1.json';
 const array = [1, 2, 3];
 const emptyArray = [];
 
-describe('datasource util lib', () => {
+describe('Util spec', () => {
   it('checkArraySize should return 3', () => {
     expect(checkArraySize(array.length)).toBe(3);
   });

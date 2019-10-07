@@ -41,13 +41,9 @@ export class PokemonsAPI extends RESTDataSource {
 
   // refactor this code
   async getSpecies(result) {
-    const language = 'en';
-    const descriptionList = getByLanguage(language, result.flavor_text_entries);
-
-    const description = getDescription(descriptionList);
-    const generaList = getByLanguage(language, result.genera);
-    const genera = generaList[generaList.length - 1].genus;
-
+    const flavorTextEntries = getByLanguage('en', result.flavor_text_entries);
+    const description = getDescription(flavorTextEntries);
+    const genera = getByLanguage('en', result.genera)[0].genus;
     return reducer.species(result, description, genera);
   }
 

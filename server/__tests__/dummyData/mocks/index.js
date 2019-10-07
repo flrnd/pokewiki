@@ -1,2 +1,3 @@
 import { bulbasaur } from './bulbasaur';
-export { bulbasaur };
+import { bulbasaurSpecies } from './bulbasaurSpecies';
+export { bulbasaur, bulbasaurSpecies };

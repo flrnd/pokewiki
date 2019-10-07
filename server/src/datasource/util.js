@@ -5,5 +5,5 @@ export const getByLanguage = (lang, list) =>
 
 // return the description matching the lastest version of the game
 // which is the first item of the array (sorted)
-export const getDescription = descriptionList =>
-  descriptionList[0].flavor_text.replace(/\n|\f/g, ' ');
+export const getDescription = flavorTextEntries =>
+  flavorTextEntries[0].flavor_text.replace(/\n|\f/g, ' ');
