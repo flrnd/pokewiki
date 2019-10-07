@@ -1,5 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import * as reducer from './reducers';
+import { getDescription, getByLanguage } from './util';
 
 export class PokemonsAPI extends RESTDataSource {
   constructor() {
@@ -41,23 +42,13 @@ export class PokemonsAPI extends RESTDataSource {
   // refactor this code
   async getSpecies(result) {
     const language = 'en';
-    const descriptionList = this.getByLanguage(
-      language,
-      result.flavor_text_entries,
-    );
+    const descriptionList = getByLanguage(language, result.flavor_text_entries);
 
-    const description = descriptionList[
-      descriptionList.length - 1
-    ].flavor_text.replace(/\n|\f/g, ' ');
-
-    const generaList = this.getByLanguage(language, result.genera);
+    const description = getDescription(descriptionList);
+    const generaList = getByLanguage(language, result.genera);
     const genera = generaList[generaList.length - 1].genus;
 
     return reducer.species(result, description, genera);
-  }
-
-  getByLanguage(lang, list) {
-    return list.filter(l => l.language.name === lang);
   }
 
   getPokemon(pokemon) {
