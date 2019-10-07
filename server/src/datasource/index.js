@@ -1,6 +1,6 @@
 import { RESTDataSource } from 'apollo-datasource-rest';
 import * as reducer from './reducers';
-import { getDescription, getByLanguage } from './util';
+import { getDescription, getByLanguage, filterByURL } from './util';
 
 export class PokemonsAPI extends RESTDataSource {
   constructor() {
@@ -10,12 +10,10 @@ export class PokemonsAPI extends RESTDataSource {
 
   async getAllPokemons(pageSize) {
     const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
-    const pageList = [];
     const list = [];
-    response.results.filter(res => pageList.push(res.url));
 
-    for (const [_, url] of pageList.entries()) {
-      await list.push(this.getPokemonByURL(url));
+    for (const [_, entrie] of response.results.entries()) {
+      await list.push(this.getPokemonByURL(entrie.url));
     }
 
     const pageInfo = reducer.pageInfo(response);
