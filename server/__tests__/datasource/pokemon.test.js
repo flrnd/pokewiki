@@ -1,5 +1,5 @@
 import { PokemonsAPI } from '../../src/datasource';
-import { bulbasaur } from '../dummyData/mocks';
+import { bulbasaur } from '../dummyData/mocks/';
 import * as apiCall from '../dummyData/mocks/1.json';
 
 describe('Datasource Spec Pokemon', () => {
@@ -19,11 +19,8 @@ describe('Datasource Spec Pokemon', () => {
     ).resolves.toMatchObject(apiCall);
   });
 
-  test('getPokemon returns a pokemon from a result', () => {
-    const moves = myDataSource.getAllMoves(result.moves);
-    expect(result.moves[0].version_group_details[0]).toHaveProperty(
-      'level_learned_at',
-    );
+  test('getPokemon returns a pokemon from a result', async () => {
+    await expect(myDataSource.getPokemon(result)).toMatchObject(bulbasaur);
   });
 
   test('getAllTypes returns a pokemon-types array from a result', () => {
