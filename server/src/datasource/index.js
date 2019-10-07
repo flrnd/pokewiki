@@ -10,12 +10,11 @@ export class PokemonsAPI extends RESTDataSource {
 
   async getAllPokemons(pageSize) {
     const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
-    const list = [];
+    const pokemons = response.results.map(
+      async entry => await this.getPokemonByURL(entry.url),
+    );
 
-    for (const [_, entrie] of response.results.entries()) {
-      await list.push(this.getPokemonByURL(entrie.url));
-    }
-
+    const list = Promise.all();
     const pageInfo = reducer.pageInfo(response);
     return {
       pageInfo,
