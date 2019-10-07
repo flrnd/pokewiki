@@ -24,13 +24,12 @@ export const pType = pokemonType => {
 };
 
 export const move = move => {
-  const size = checkArraySize(move.version_group_details.length - 1);
-  const lastVersionGroup = move.version_group_details[size];
+  const versionGroup = move.version_group_details[0];
   return {
     name: move.move.name,
-    levelLearnedAt: lastVersionGroup.level_learned_at,
-    moveLearnMethod: lastVersionGroup.move_learn_method.name,
-    versionGroup: lastVersionGroup.version_group.name,
+    levelLearnedAt: versionGroup.level_learned_at,
+    moveLearnMethod: versionGroup.move_learn_method.name,
+    versionGroup: versionGroup.version_group.name,
   };
 };
 

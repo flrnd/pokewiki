@@ -23,7 +23,7 @@ describe('Reducers spec', () => {
       name: 'razor-wind',
       levelLearnedAt: 0,
       moveLearnMethod: 'egg',
-      versionGroup: 'gold-silver',
+      versionGroup: 'crystal',
     });
   });
 
