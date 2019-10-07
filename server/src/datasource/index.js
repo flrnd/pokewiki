@@ -45,6 +45,7 @@ export class PokemonsAPI extends RESTDataSource {
       language,
       result.flavor_text_entries,
     );
+
     const description = descriptionList[
       descriptionList.length - 1
     ].flavor_text.replace(/\n|\f/g, ' ');
