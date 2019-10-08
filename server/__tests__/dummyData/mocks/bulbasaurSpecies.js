@@ -1,4 +1,4 @@
-export const bulbasaurSpecies = {
+export const bulbasaurSpeciesQuery = {
   name: 'bulbasaur',
   color: 'green',
   description:

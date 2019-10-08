@@ -14,7 +14,7 @@ export class PokemonsAPI extends RESTDataSource {
       async entry => await this.getPokemonByURL(entry.url),
     );
 
-    const list = Promise.all();
+    const list = Promise.all(pokemons);
     const pageInfo = reducer.pageInfo(response);
     return {
       pageInfo,

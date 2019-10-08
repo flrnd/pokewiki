@@ -1,4 +1,4 @@
-export const bulbasaur = {
+export const bulbasaurQuery = {
   id: 1,
   name: 'bulbasaur',
   pokemonTypes: [{ slot: 2, name: 'poison' }, { slot: 1, name: 'grass' }],

@@ -1,5 +1,5 @@
 import * as reducers from '../../src/datasource/reducers';
-import * as result from '../dummyData/mocks/1.json';
+import { bulbasaurRequest as result } from '../dummyData/mocks';
 
 describe('Reducers spec', () => {
   it('returns stat', () => {
