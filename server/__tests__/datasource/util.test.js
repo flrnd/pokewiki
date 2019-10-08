@@ -3,7 +3,7 @@ import {
   getByLanguage,
   getDescription,
 } from './../../src/datasource/util';
-import * as speciesApiCall from '../dummyData/mocks/species_1.json';
+import { bulbasaurSpeciesRequest as speciesApiCall } from '../dummyData/mocks';
 
 const array = [1, 2, 3];
 const emptyArray = [];
