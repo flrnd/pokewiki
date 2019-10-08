@@ -128,7 +128,7 @@ Queries
 """
 type Query {
   "Get pokemons in a list"
-  allPokemon(pageSize: Int!): Pokemons!
+  allPokemon(pageSize: Int!, offSet: Int): Pokemons!
   "Get a single pokemon"
   pokemon(id: ID!): Pokemon!
   "Get Species"
