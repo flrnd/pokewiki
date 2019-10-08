@@ -8,8 +8,7 @@ export class PokemonsAPI extends RESTDataSource {
     this.baseURL = 'https://pokeapi.co/api/v2/';
   }
 
-  async getAllPokemons(pageSize) {
-    const response = await this.get(`pokemon/?offset=0&limit=${pageSize}`);
+  async getAllPokemons(response) {
     const pokemons = response.results.map(
       async entry => await this.getPokemonByURL(entry.url),
     );

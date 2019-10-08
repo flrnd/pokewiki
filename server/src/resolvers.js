@@ -7,9 +7,12 @@ export const resolvers = {
       );
       return dataSources.PokemonsAPI.getPokemon(result);
     },
-    allPokemon: (parent, { pageSize }, { dataSources }) =>
-      dataSources.PokemonsAPI.getAllPokemons(pageSize),
-
+    allPokemon: async (parent, { pageSize, offSet = 0 }, { dataSources }) => {
+      const response = await dataSources.PokemonsAPI.get(
+        `pokemon/?offset=${offSet}&limit=${pageSize}`,
+      );
+      return dataSources.PokemonsAPI.getAllPokemons(response);
+    },
     species: async (parent, { id }, { dataSources }) => {
       const result = await dataSources.PokemonsAPI.getObjectByTypeAndId(
         'pokemon-species',
