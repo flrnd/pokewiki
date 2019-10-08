@@ -1,4 +1,4 @@
-import { checkArraySize } from './util';
+import { checkArraySize, isProperty } from './util';
 
 export const stat = stat => {
   return {
@@ -35,20 +35,9 @@ export const move = move => {
 
 export const pageInfo = response => {
   const pageInfo = {
-    hasNextPage: false,
-    hasPreviousPage: false,
-    startCursor: '',
-    endCursor: '',
+    next: response.next,
+    previous: response.previous,
   };
-
-  response.next
-    ? ((pageInfo.hasNextPage = true), (pageInfo.endCursor = response.next))
-    : pageInfo;
-  response.previous
-    ? ((pageInfo.hasPreviousPage = true),
-      (pageInfo.startCursor = response.previous))
-    : pageInfo;
-
   return pageInfo;
 };
 

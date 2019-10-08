@@ -25,8 +25,32 @@ describe('Datasource Spec Pokemon', () => {
     ).resolves.toMatchObject(bulbasaurRequest);
   });
 
-  test('getPokemon returns a pokemon from a result', async () => {
-    await expect(myDataSource.getPokemon(result)).toMatchObject(bulbasaurQuery);
+  test('getPokemon returns a pokemon from a result', () => {
+    expect(myDataSource.getPokemon(result)).toMatchObject(bulbasaurQuery);
+  });
+
+  test('getPokemonsList returns a list of 3 pokemon', () => {
+    return myDataSource
+      .getPokemonsList(allPokemonsRequest.results)
+      .then(list => {
+        expect(list.length).toBe(3);
+      });
+  });
+
+  test('getAllPokemons returns pageInfo and size of 3 list', async () => {
+    const result = await myDataSource.getAllPokemons(allPokemonsRequest);
+    // getAllPokemons calls internally getPokemonList, which resolves every
+    // element in its own order. For this reason we need to 'convert' the
+    // received and expected objects to make a proper comparison.
+    const received = Object.entries(result).toString();
+    const expected = Object.entries(allPokemonsQuery).toString();
+
+    expect(result).toHaveProperty('pageInfo');
+    expect(typeof result.pageInfo).toEqual(typeof {});
+    expect(result).toHaveProperty('list');
+    expect(typeof result.list).toBe(typeof []);
+    expect(result.list.length).toBe(3);
+    expect(received).toBe(expected);
   });
 
   test('getAllTypes returns a pokemon-types array from a result', () => {

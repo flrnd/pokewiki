@@ -2,6 +2,7 @@ import {
   checkArraySize,
   getByLanguage,
   getDescription,
+  isProperty,
 } from './../../src/datasource/util';
 import { bulbasaurSpeciesRequest as speciesApiCall } from '../dummyData/mocks';
 

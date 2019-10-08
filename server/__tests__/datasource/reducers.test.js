@@ -1,5 +1,8 @@
 import * as reducers from '../../src/datasource/reducers';
-import { bulbasaurRequest as result } from '../dummyData/mocks';
+import {
+  bulbasaurRequest as result,
+  allPokemonsRequest as pageResult,
+} from '../dummyData/mocks';
 
 describe('Reducers spec', () => {
   it('returns stat', () => {
@@ -31,6 +34,13 @@ describe('Reducers spec', () => {
     expect(reducers.pType(result.types[0])).toMatchObject({
       name: 'poison',
       slot: 2,
+    });
+  });
+
+  it('returns pageInfo', () => {
+    expect(reducers.pageInfo(pageResult)).toMatchObject({
+      next: 'https://pokeapi.co/api/v2/pokemon/?offset=3&limit=3',
+      previous: null,
     });
   });
 });

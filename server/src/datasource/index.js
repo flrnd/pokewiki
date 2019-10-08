@@ -9,16 +9,19 @@ export class PokemonsAPI extends RESTDataSource {
   }
 
   async getAllPokemons(response) {
-    const pokemons = response.results.map(
-      async entry => await this.getPokemonByURL(entry.url),
-    );
-
-    const list = Promise.all(pokemons);
     const pageInfo = reducer.pageInfo(response);
+    const list = await this.getPokemonsList(response.results);
     return {
       pageInfo,
       list,
     };
+  }
+
+  getPokemonsList(results) {
+    const pokemons = results.map(
+      async entry => await this.getPokemonByURL(entry.url),
+    );
+    return Promise.all(pokemons);
   }
 
   async getObjectByTypeAndId(type, id) {

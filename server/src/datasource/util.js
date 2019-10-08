@@ -7,3 +7,5 @@ export const getByLanguage = (lang, list) =>
 // which is the first item of the array (sorted)
 export const getDescription = flavorTextEntries =>
   flavorTextEntries[0].flavor_text.replace(/\n|\f/g, ' ');
+
+// export const isProperty = prop => (prop ? true : false);

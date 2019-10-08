@@ -2,14 +2,10 @@
 PageInfo object for pagination
 """
 type PageInfo {
-  "Has next page bool"
-  hasNextPage: Boolean!
-  "Has previous page bool"
-  hasPreviousPage: Boolean!
-  "has start cursor"
-  startCursor: String
-  "has end cursor"
-  endCursor: String
+  "next page"
+  next: String
+  "previous page"
+  previous: String
 }
 
 """
