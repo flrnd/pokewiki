@@ -2,7 +2,7 @@ import { RESTDataSource } from 'apollo-datasource-rest';
 import * as reducer from './reducers';
 import { getDescription, getByLanguage } from './util';
 
-export class PokemonsAPI extends RESTDataSource {
+export default class PokemonsAPI extends RESTDataSource {
   constructor() {
     super();
     this.baseURL = 'https://pokeapi.co/api/v2/';
@@ -18,14 +18,14 @@ export class PokemonsAPI extends RESTDataSource {
   }
 
   getPokemonsList(results) {
-    const pokemons = results.map(
-      async entry => await this.getPokemonByURL(entry.url),
+    const pokemons = results.map(async entry =>
+      this.getPokemonByURL(entry.url),
     );
     return Promise.all(pokemons);
   }
 
   async getObjectByTypeAndId(type, id) {
-    return await this.get(`${type}/${id}/`);
+    return this.get(`${type}/${id}/`);
   }
 
   async getPokemonByURL(url) {
@@ -40,7 +40,10 @@ export class PokemonsAPI extends RESTDataSource {
 
   // refactor this code
   async getSpecies(result) {
-    const flavorTextEntries = getByLanguage('en', result.flavor_text_entries);
+    const flavorTextEntries = this.getByLanguage(
+      'en',
+      result.flavor_text_entries,
+    );
     const description = getDescription(flavorTextEntries);
     const genera = getByLanguage('en', result.genera)[0].genus;
     return reducer.species(result, description, genera);
@@ -61,18 +64,18 @@ export class PokemonsAPI extends RESTDataSource {
   }
 
   getAllMoves(moves) {
-    return moves.map(move => reducer.move(move));
+    return moves.map(move => this.reducer.move(move));
   }
 
   getAllTypes(pokemonTypes) {
-    return pokemonTypes.map(pokemonType => reducer.pType(pokemonType));
+    return pokemonTypes.map(pokemonType => this.reducer.pType(pokemonType));
   }
 
   getAllAbilities(abilities) {
-    return abilities.map(ability => reducer.ability(ability));
+    return abilities.map(ability => this.reducer.ability(ability));
   }
 
   getAllStats(stats) {
-    return stats.map(stat => reducer.stat(stat));
+    return stats.map(stat => this.reducer.stat(stat));
   }
 }
